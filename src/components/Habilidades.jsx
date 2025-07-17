@@ -2,6 +2,7 @@ export default function Habilidades() {
   const habilidades = [
     {
       categoria: "Sistemas y Herramientas",
+      icon: "💻",
       items: [
         "Linux",
         "GNU/Linux",
@@ -14,32 +15,26 @@ export default function Habilidades() {
         "Loop",
         "Azure",
       ],
-      icon: "🖥️",
     },
     {
       categoria: "Lenguajes y Ciencia de Datos",
-      items: ["R (Lenguaje de programación)", "Análisis de datos"],
       icon: "📊",
+      items: ["R (Lenguaje de programación)", "Análisis de datos"],
     },
     {
       categoria: "Investigación y Ciencia",
+      icon: "🔬",
       items: [
         "Investigación",
         "Acoplamiento molecular",
         "Dinámica molecular",
         "Química computacional",
       ],
-      icon: "🔬",
     },
     {
       categoria: "Habilidades Personales",
-      items: [
-        "Liderazgo",
-        "Trabajo en equipo",
-        "Comunicación efectiva",
-        "Inglés",
-      ],
       icon: "🤝",
+      items: ["Liderazgo", "Trabajo en equipo", "Comunicación efectiva", "Inglés"],
     },
   ];
 
@@ -47,46 +42,78 @@ export default function Habilidades() {
     <section
       id="habilidades"
       style={{
-        padding: "40px",
+        padding: "40px 20px",
         maxWidth: "1200px",
         margin: "0 auto",
         textAlign: "center",
       }}
     >
-      <h2 style={{ fontSize: "2rem", marginBottom: "20px" }}>💡 Mis Habilidades</h2>
-      <p style={{ marginBottom: "40px", fontSize: "1.1rem", lineHeight: "1.6" }}>
-        Estas son algunas de las áreas técnicas y personales en las que me desempeño,
-        integrando herramientas, investigación y trabajo colaborativo para lograr
-        resultados efectivos.
+      <h2 style={{ fontSize: "2rem", marginBottom: "30px" }}>💡 Mis Habilidades</h2>
+      <p style={{ fontSize: "1.1rem", marginBottom: "40px", lineHeight: "1.6" }}>
+        Estas son algunas de las áreas técnicas y personales en las que destaco.
       </p>
 
       <div
         style={{
           display: "grid",
           gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))",
-          gap: "20px",
+          gap: "25px",
         }}
       >
         {habilidades.map((grupo) => (
           <div
             key={grupo.categoria}
             style={{
-              backgroundColor: "#f7f7f7",
-              padding: "20px",
+              backgroundColor: "#fff",
               borderRadius: "12px",
               boxShadow: "0 2px 6px rgba(0,0,0,0.1)",
-              textAlign: "center",
-              transition: "transform 0.2s",
+              padding: "20px",
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              justifyContent: "flex-start",
+              minHeight: "300px", // 👈 fuerza misma altura aproximada
             }}
-            onMouseOver={(e) => (e.currentTarget.style.transform = "scale(1.03)")}
-            onMouseOut={(e) => (e.currentTarget.style.transform = "scale(1)")}
           >
             <div style={{ fontSize: "2rem", marginBottom: "10px" }}>{grupo.icon}</div>
-            <h3 style={{ marginBottom: "15px", color: "#0A66C2" }}>{grupo.categoria}</h3>
-            <ul style={{ listStyle: "none", padding: 0 }}>
+            <h3
+              style={{
+                color: "#0A66C2",
+                marginBottom: "15px",
+                fontSize: "1.2rem",
+              }}
+            >
+              {grupo.categoria}
+            </h3>
+            <ul
+              style={{
+                listStyle: "none",
+                padding: 0,
+                margin: 0,
+                textAlign: "left",
+                width: "100%",
+              }}
+            >
               {grupo.items.map((item) => (
-                <li key={item} style={{ marginBottom: "8px", fontSize: "0.95rem" }}>
-                  ✅ {item}
+                <li
+                  key={item}
+                  style={{
+                    marginBottom: "8px",
+                    display: "flex",
+                    alignItems: "center",
+                    fontSize: "0.95rem",
+                  }}
+                >
+                  <span
+                    style={{
+                      color: "#28a745",
+                      fontWeight: "bold",
+                      marginRight: "8px",
+                    }}
+                  >
+                    ✔
+                  </span>
+                  {item}
                 </li>
               ))}
             </ul>
