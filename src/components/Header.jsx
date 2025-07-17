@@ -1,137 +1,94 @@
 export default function Header() {
-  const habilidadesClaves = [
-  
-  
-  ];
-
   return (
     <header
+      id="top"
       style={{
         background: "linear-gradient(90deg, #0A66C2, #004182)",
         color: "#fff",
-        padding: "30px 20px",
+        padding: "50px 20px",
         textAlign: "center",
-        boxShadow: "0 2px 8px rgba(0,0,0,0.2)",
-        position: "relative",
+        boxShadow: "0 4px 8px rgba(0,0,0,0.2)",
       }}
     >
-      {/* Nombre y Rol */}
-      <h1 style={{ fontSize: "2.2rem", margin: "0", fontWeight: "bold" }}>
+      {/* Nombre y rol */}
+      <h1 style={{ fontSize: "2.5rem", margin: 0, fontWeight: "700" }}>
         Marcelo Araneda
       </h1>
       <h2
         style={{
-          fontSize: "1.3rem",
-          marginTop: "8px",
-          fontWeight: "normal",
-          color: "#d0e6ff",
+          fontSize: "1.4rem",
+          marginTop: "10px",
+          fontWeight: "400",
+          color: "#dbe9ff",
         }}
       >
-        🚀 Product Owner | Ingeniero Civil en Bioinformática
+        🚀 Product Owner · Ingeniero Civil en Bioinformática
       </h2>
+
+      {/* Descripción breve */}
+      <p
+        style={{
+          marginTop: "20px",
+          fontSize: "1.1rem",
+          maxWidth: "700px",
+          marginLeft: "auto",
+          marginRight: "auto",
+          lineHeight: "1.6",
+        }}
+      >
+        Apasionado por la tecnología, la innovación y el trabajo en equipo.
+        Transformo ideas en soluciones digitales con metodologías ágiles y foco en resultados.
+      </p>
 
       {/* Barra de navegación */}
       <nav
         style={{
-          marginTop: "20px",
+          marginTop: "30px",
           display: "flex",
           justifyContent: "center",
-          gap: "20px",
           flexWrap: "wrap",
+          gap: "15px",
         }}
       >
-        <a
-          href="#about"
-          style={{
-            color: "#fff",
-            textDecoration: "none",
-            fontWeight: "bold",
-            padding: "8px 16px",
-            borderRadius: "20px",
-            background: "rgba(255,255,255,0.1)",
-            transition: "background 0.3s",
-          }}
-          onMouseOver={(e) => (e.currentTarget.style.background = "rgba(255,255,255,0.3)")}
-          onMouseOut={(e) => (e.currentTarget.style.background = "rgba(255,255,255,0.1)")}
-        >
+        <a href="#about" className="button" style={{ backgroundColor: "#f2f3f4", color: "#0A66C2" }}>
           Sobre mí
         </a>
-        <a
-          href="#projects"
-          style={{
-            color: "#fff",
-            textDecoration: "none",
-            fontWeight: "bold",
-            padding: "8px 16px",
-            borderRadius: "20px",
-            background: "rgba(255,255,255,0.1)",
-            transition: "background 0.3s",
-          }}
-          onMouseOver={(e) => (e.currentTarget.style.background = "rgba(255,255,255,0.3)")}
-          onMouseOut={(e) => (e.currentTarget.style.background = "rgba(255,255,255,0.1)")}
-        >
+        <a href="#projects" className="button" style={{ backgroundColor: "#f2f3f4", color: "#0A66C2" }}>
           Proyectos
         </a>
-        <a
-          href="#habilidades"
-          style={{
-            color: "#fff",
-            textDecoration: "none",
-            fontWeight: "bold",
-            padding: "8px 16px",
-            borderRadius: "20px",
-            background: "rgba(255,255,255,0.1)",
-            transition: "background 0.3s",
-          }}
-          onMouseOver={(e) => (e.currentTarget.style.background = "rgba(255,255,255,0.3)")}
-          onMouseOut={(e) => (e.currentTarget.style.background = "rgba(255,255,255,0.1)")}
-        >
+        <a href="#habilidades" className="button" style={{ backgroundColor: "#f2f3f4", color: "#0A66C2" }}>
           Habilidades
         </a>
-        <a
-          href="#contact"
-          style={{
-            color: "#fff",
-            textDecoration: "none",
-            fontWeight: "bold",
-            padding: "8px 16px",
-            borderRadius: "20px",
-            background: "rgba(255,255,255,0.1)",
-            transition: "background 0.3s",
-          }}
-          onMouseOver={(e) => (e.currentTarget.style.background = "rgba(255,255,255,0.3)")}
-          onMouseOut={(e) => (e.currentTarget.style.background = "rgba(255,255,255,0.1)")}
-        >
+        <a href="#contact" className="button" style={{ backgroundColor: "#f2f3f4", color: "#0A66C2" }}>
           Contacto
         </a>
       </nav>
 
-      {/* Habilidades Clave */}
+      {/* Habilidades clave destacadas */}
       <div
         style={{
-          marginTop: "30px",
+          marginTop: "40px",
           display: "flex",
           justifyContent: "center",
-          gap: "15px",
+          gap: "12px",
           flexWrap: "wrap",
         }}
       >
-        {habilidadesClaves.map((hab) => (
+        {["Liderazgo", "Trabajo en equipo", "Comunicación efectiva", "Inglés"].map((skill) => (
           <span
-            key={hab}
+            key={skill}
             style={{
-              background: "rgba(255,255,255,0.15)",
-              padding: "8px 14px",
+              backgroundColor: "#ffffff33",
+              padding: "8px 16px",
               borderRadius: "20px",
-              fontWeight: "bold",
-              fontSize: "0.95rem",
-              boxShadow: "0 0 6px rgba(255,255,255,0.3)",
+              fontWeight: "600",
+              backdropFilter: "blur(2px)",
               transition: "transform 0.3s",
             }}
             onMouseOver={(e) => (e.currentTarget.style.transform = "scale(1.1)")}
             onMouseOut={(e) => (e.currentTarget.style.transform = "scale(1)")}
           >
-            ✨ {hab}
+            ✨ {skill}
           </span>
         ))}
       </div>

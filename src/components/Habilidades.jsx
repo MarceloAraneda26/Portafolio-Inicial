@@ -120,6 +120,14 @@ export default function Habilidades() {
           </div>
         ))}
       </div>
+      <a
+        href="#top"
+        className="button"
+        style={{ marginTop: "30px", display: "inline-block" }}
+      >
+        ⬆️ Volver al inicio
+      </a>
+
     </section>
   );
 }

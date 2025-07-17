@@ -2,52 +2,42 @@ export default function Footer() {
   return (
     <footer
       style={{
-        padding: "40px 20px",
-        backgroundColor: "#282c34",
+        backgroundColor: "#0A66C2",
         color: "#fff",
         textAlign: "center",
-        marginTop: "40px",
+        padding: "30px 20px",
+        marginTop: "50px",
       }}
     >
-      {/* Eslogan o descripción corta */}
-      <h3 style={{ marginBottom: "10px" }}>Marcelo Araneda – Product Owner & Ingeniero en Bioinformática</h3>
-      <p style={{ fontSize: "0.95rem", lineHeight: "1.6", maxWidth: "700px", margin: "0 auto 20px" }}>
-        Experto en coordinar equipos multidisciplinarios, priorizar el backlog y garantizar
-        que el producto entregue valor continuo. Apasionado por la innovación, la mejora
-        continua y la experiencia del usuario.
+      <p style={{ margin: "5px 0", fontSize: "1rem" }}>
+        © {new Date().getFullYear()} Marcelo Araneda · Todos los derechos reservados
       </p>
 
-      {/* Links rápidos de navegación */}
-      <nav style={{ marginBottom: "20px" }}>
+      {/* Links rápidos */}
+      <div
+        style={{
+          marginTop: "10px",
+          display: "flex",
+          justifyContent: "center",
+          gap: "20px",
+          flexWrap: "wrap",
+        }}
+      >
         <a
-          href="#about"
-          style={{ color: "#61dafb", margin: "0 10px", textDecoration: "none" }}
+          href="https://www.linkedin.com/in/marcelo-araneda-urbina-8939471ab"
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{ color: "#fff", textDecoration: "underline" }}
         >
-          Sobre mí
+          LinkedIn
         </a>
         <a
-          href="#projects"
-          style={{ color: "#61dafb", margin: "0 10px", textDecoration: "none" }}
+          href="#top"
+          style={{ color: "#fff", textDecoration: "underline" }}
         >
-          Proyectos
+          Volver arriba
         </a>
-        <a
-          href="#contact"
-          style={{ color: "#61dafb", margin: "0 10px", textDecoration: "none" }}
-        >
-          Contacto
-        </a>
-      </nav>
-
-      {/* Llamado a la acción */}
-      <p style={{ fontSize: "1rem", fontWeight: "bold", marginTop: "10px" }}>
-        🚀 Disponible para nuevos desafíos y proyectos innovadores.
-      </p>
-
-      {/* Derechos reservados */}
-      <p style={{ marginTop: "30px", fontSize: "0.8rem", color: "#bbb" }}>
-        © 2025 Marcelo Araneda. Todos los derechos reservados.
-      </p>
+      </div>
     </footer>
   );
 }

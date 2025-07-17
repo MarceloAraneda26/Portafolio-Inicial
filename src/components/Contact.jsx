@@ -3,85 +3,45 @@ export default function Contact() {
     <section
       id="contact"
       style={{
-        padding: "40px",
+        padding: "40px 20px",
         textAlign: "center",
         maxWidth: "1000px",
         margin: "0 auto",
       }}
     >
-      <h2>Contacto</h2>
-      <p style={{ marginTop: "10px", lineHeight: "1.6" }}>
-        ¿Te interesa colaborar conmigo o saber más sobre mi trabajo? 
+      <h2 style={{ fontSize: "2rem", marginBottom: "20px" }}>📬 Contacto</h2>
+      <p style={{ marginTop: "10px", lineHeight: "1.6", fontSize: "1.1rem" }}>
+        ¿Te interesa colaborar conmigo o saber más sobre mi trabajo?
         Puedes contactarme a través de los siguientes medios:
       </p>
 
-      {/* Enlace a LinkedIn */}
+      {/* Botón LinkedIn */}
       <div style={{ marginTop: "20px" }}>
         <a
           href="https://www.linkedin.com/in/marcelo-araneda-urbina-8939471ab"
           target="_blank"
           rel="noopener noreferrer"
-          style={{
-            display: "inline-block",
-            margin: "10px",
-            padding: "12px 24px",
-            backgroundColor: "#0A66C2",
-            color: "#fff",
-            borderRadius: "8px",
-            textDecoration: "none",
-            fontWeight: "bold",
-            fontSize: "16px",
-            boxShadow: "0 2px 6px rgba(0,0,0,0.2)",
-          }}
+          className="button"
         >
           🔗 Visita mi LinkedIn
         </a>
       </div>
 
-      {/* Correo */}
+      {/* Botón Correo */}
       <div style={{ marginTop: "20px" }}>
-        <a
-          href="mailto:marcelo.araneda26@gmail.com"
-          style={{
-            display: "inline-block",
-            margin: "10px",
-            padding: "12px 24px",
-            backgroundColor: "#28a745",
-            color: "#fff",
-            borderRadius: "8px",
-            textDecoration: "none",
-            fontWeight: "bold",
-            fontSize: "16px",
-            boxShadow: "0 2px 6px rgba(0,0,0,0.2)",
-          }}
-        >
+        <a href="mailto:marcelo.araneda26@gmail.com" className="button" style={{ backgroundColor: "#28a745" }}>
           📧 Escríbeme por correo
         </a>
       </div>
 
-      {/* Descarga de CV */}
+      {/* Botón CV */}
       <div style={{ marginTop: "20px" }}>
-        <a
-          href="/cv.pdf"
-          download
-          style={{
-            display: "inline-block",
-            margin: "10px",
-            padding: "12px 24px",
-            backgroundColor: "#ff9800",
-            color: "#fff",
-            borderRadius: "8px",
-            textDecoration: "none",
-            fontWeight: "bold",
-            fontSize: "16px",
-            boxShadow: "0 2px 6px rgba(0,0,0,0.2)",
-          }}
-        >
+        <a href="/cv.pdf" download className="button" style={{ backgroundColor: "#ff9800" }}>
           📄 Descargar mi CV
         </a>
       </div>
 
-      {/* Elemento extra llamativo */}
+      {/* Por qué elegirme */}
       <div
         style={{
           marginTop: "40px",
@@ -91,12 +51,14 @@ export default function Contact() {
           backgroundColor: "#f7f7f7",
         }}
       >
-        <h3 style={{ marginBottom: "10px" }}>💡 ¿Por qué elegirme?</h3>
+        <h3 style={{ marginBottom: "10px", fontSize: "1.4rem" }}>💡 ¿Por qué elegirme?</h3>
         <ul
           style={{
             listStyleType: "⭐",
             textAlign: "left",
             display: "inline-block",
+            margin: 0,
+            padding: 0,
           }}
         >
           <li>Amplia experiencia en proyectos interdisciplinarios</li>
@@ -107,138 +69,52 @@ export default function Contact() {
       </div>
 
       {/* Sección de lugares donde he trabajado */}
-     <section
-  style={{
-    marginTop: "50px",
-    textAlign: "center",
-  }}
->
-  <h3 style={{ fontSize: "1.4rem", marginBottom: "30px" }}>🏢 He trabajado en:</h3>
+      <div style={{ marginTop: "50px" }}>
+        <h3 style={{ fontSize: "1.4rem", marginBottom: "30px" }}>🏢 He trabajado en:</h3>
 
-  <div
-    style={{
-      display: "grid",
-      gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
-      gap: "20px",
-      justifyItems: "center",
-    }}
-  >
-    {/* Universidad de Talca */}
-    <a
-      href="https://www.utalca.cl/"
-      target="_blank"
-      rel="noopener noreferrer"
-      style={{
-        backgroundColor: "##f2f3f4",
-        borderRadius: "12px",
-        padding: "20px",
-        boxShadow: "0 2px 6px rgba(0,0,0,0.1)",
-        textDecoration: "none",
-        color: "#000",
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        justifyContent: "center",
-        height: "180px",
-        width: "100%",
-        maxWidth: "250px",
-        transition: "transform 0.3s ease, box-shadow 0.3s ease",
-      }}
-      onMouseOver={(e) => {
-        e.currentTarget.style.transform = "translateY(-6px)";
-        e.currentTarget.style.boxShadow = "0 8px 20px rgba(0,0,0,0.15)";
-      }}
-      onMouseOut={(e) => {
-        e.currentTarget.style.transform = "translateY(0)";
-        e.currentTarget.style.boxShadow = "0 2px 6px rgba(0,0,0,0.1)";
-      }}
-    >
-      <img
-        src="/utalca-logo.png"
-        alt="Universidad de Talca"
-        style={{ maxHeight: "80px", objectFit: "contain", marginBottom: "15px" }}
-      />
-      <span style={{ fontWeight: "bold" }}>Universidad de Talca</span>
-    </a>
+        <div className="card-grid">
+          {/* Universidad de Talca */}
+          <a
+            href="https://www.utalca.cl/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="card"
+          >
+            <img src="/utalca-logo.png" alt="Universidad de Talca" />
+            <span style={{ fontWeight: "bold", textAlign: "center" }}>Universidad de Talca</span>
+          </a>
 
-    {/* CBSM */}
-    <a
-      href="https://cbsm.utalca.cl/"
-      target="_blank"
-      rel="noopener noreferrer"
-      style={{
-        backgroundColor: "##f2f3f4",
-        borderRadius: "12px",
-        padding: "20px",
-        boxShadow: "0 2px 6px rgba(0,0,0,0.1)",
-        textDecoration: "none",
-        color: "#000",
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        justifyContent: "center",
-        height: "180px",
-        width: "100%",
-        maxWidth: "250px",
-        transition: "transform 0.3s ease, box-shadow 0.3s ease",
-      }}
-      onMouseOver={(e) => {
-        e.currentTarget.style.transform = "translateY(-6px)";
-        e.currentTarget.style.boxShadow = "0 8px 20px rgba(0,0,0,0.15)";
-      }}
-      onMouseOut={(e) => {
-        e.currentTarget.style.transform = "translateY(0)";
-        e.currentTarget.style.boxShadow = "0 2px 6px rgba(0,0,0,0.1)";
-      }}
-    >
-      <img
-        src="/cbsm-logo.png"
-        alt="CBSM"
-        style={{ maxHeight: "80px", objectFit: "contain", marginBottom: "15px" }}
-      />
-      <span style={{ fontWeight: "bold" }}>CBSM</span>
-    </a>
+          {/* CBSM */}
+          <a
+            href="https://cbsm.utalca.cl/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="card"
+          >
+            <img src="/cbsm-logo.png" alt="CBSM" />
+            <span style={{ fontWeight: "bold", textAlign: "center" }}>CBSM</span>
+          </a>
 
-    {/* Tibox */}
-    <a
-      href="https://tibox.cl/"
-      target="_blank"
-      rel="noopener noreferrer"
-      style={{
-        backgroundColor: "##f2f3f4",
-        borderRadius: "12px",
-        padding: "20px",
-        boxShadow: "0 2px 6px rgba(0,0,0,0.1)",
-        textDecoration: "none",
-        color: "#000",
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        justifyContent: "center",
-        height: "180px",
-        width: "100%",
-        maxWidth: "250px",
-        transition: "transform 0.3s ease, box-shadow 0.3s ease",
-      }}
-      onMouseOver={(e) => {
-        e.currentTarget.style.transform = "translateY(-6px)";
-        e.currentTarget.style.boxShadow = "0 8px 20px rgba(0,0,0,0.15)";
-      }}
-      onMouseOut={(e) => {
-        e.currentTarget.style.transform = "translateY(0)";
-        e.currentTarget.style.boxShadow = "0 2px 6px rgba(0,0,0,0.1)";
-      }}
-    >
-      <img
-        src="/tibox-logo.png"
-        alt="Tibox"
-        style={{ maxHeight: "80px", objectFit: "contain", marginBottom: "15px" }}
-      />
-      <span style={{ fontWeight: "bold" }}>Tibox</span>
-    </a>
-  </div>
-</section>
- 
+          {/* Tibox */}
+          <a
+            href="https://tibox.cl"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="card"
+          >
+            <img src="/tibox-logo.png" alt="Tibox" />
+            <span style={{ fontWeight: "bold", textAlign: "center" }}>Tibox</span>
+          </a>
+        </div>
+      </div>
+      <a
+        href="#top"
+        className="button"
+        style={{ marginTop: "30px", display: "inline-block" }}
+      >
+        ⬆️ Volver al inicio
+      </a>
+
     </section>
   );
 }

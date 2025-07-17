@@ -157,6 +157,14 @@ export default function Projects() {
           </div>
         ))}
       </div>
+      <a
+        href="#top"
+        className="button"
+        style={{ marginTop: "30px", display: "inline-block" }}
+      >
+        ⬆️ Volver al inicio
+      </a>
+
     </section>
   );
 }
