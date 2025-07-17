@@ -14,6 +14,7 @@ export default function Projects() {
       ],
       color: "#0A66C2",
       link: "https://cbsm.utalca.cl/wendylab/",
+      doc: "/docs/fondecyt.pdf", // 👉 reemplaza por tu ruta real
     },
     {
       titulo: "🌱 Desarrollo TI para Tibox",
@@ -26,6 +27,7 @@ export default function Projects() {
       ],
       color: "#28a745",
       link: "https://www.tibox.cl/desarrollo-de-aplicaciones-a-medida/",
+      doc: "/docs/tibox-desarrollo.pdf", // 👉 reemplaza por tu ruta real
     },
     {
       titulo: "📊 Reportería y Analítica para Tibox",
@@ -39,6 +41,7 @@ export default function Projects() {
       ],
       color: "#ff9800",
       link: "https://www.tibox.cl/reportes-en-power-bi/",
+      doc: "/docs/tibox-analitica.pdf", // 👉 reemplaza por tu ruta real
     },
   ];
 
@@ -55,8 +58,7 @@ export default function Projects() {
       <h2 style={{ fontSize: "2rem", marginBottom: "30px" }}>🚀 Mis Proyectos Destacados</h2>
       <p style={{ fontSize: "1.1rem", marginBottom: "50px", lineHeight: "1.6" }}>
         A continuación puedes explorar algunos de los proyectos más relevantes en los que he
-        participado. Cada uno destaca mi experiencia técnica y mi capacidad para liderar y
-        colaborar en equipos multidisciplinarios.
+        participado. Cada uno incluye herramientas clave y un documento para más detalle.
       </p>
 
       <div
@@ -133,7 +135,7 @@ export default function Projects() {
               ))}
             </ul>
 
-            {/* Botón para el link */}
+            {/* Botón Ver más */}
             <a
               href={proyecto.link}
               target="_blank"
@@ -154,17 +156,30 @@ export default function Projects() {
             >
               🔗 Ver más
             </a>
+
+            {/* Botón Descargar documento */}
+            <a
+              href={proyecto.doc}
+              download
+              style={{
+                marginTop: "15px",
+                padding: "10px 20px",
+                backgroundColor: "#444",
+                color: "#fff",
+                fontWeight: "bold",
+                textDecoration: "none",
+                borderRadius: "8px",
+                boxShadow: "0 2px 6px rgba(0,0,0,0.2)",
+                transition: "background-color 0.3s",
+              }}
+              onMouseOver={(e) => (e.currentTarget.style.backgroundColor = "#000")}
+              onMouseOut={(e) => (e.currentTarget.style.backgroundColor = "#444")}
+            >
+              📄 Descargar documento
+            </a>
           </div>
         ))}
       </div>
-      <a
-        href="#top"
-        className="button"
-        style={{ marginTop: "30px", display: "inline-block" }}
-      >
-        ⬆️ Volver al inicio
-      </a>
-
     </section>
   );
 }
