@@ -1,3 +1,5 @@
+import "./projects.css"; // 👈 importa tu CSS
+
 export default function Projects() {
   const proyectos = [
     {
@@ -14,7 +16,7 @@ export default function Projects() {
       ],
       color: "#0A66C2",
       link: "https://cbsm.utalca.cl/wendylab/",
-      doc: "/docs/fondecyt.pdf", // 👉 reemplaza por tu ruta real
+      doc: "/docs/fondecyt.pdf",
     },
     {
       titulo: "🌱 Desarrollo TI para Tibox",
@@ -27,7 +29,7 @@ export default function Projects() {
       ],
       color: "#28a745",
       link: "https://www.tibox.cl/desarrollo-de-aplicaciones-a-medida/",
-      doc: "/docs/tibox-desarrollo.pdf", // 👉 reemplaza por tu ruta real
+      doc: "/docs/tibox-desarrollo.pdf",
     },
     {
       titulo: "📊 Reportería y Analítica para Tibox",
@@ -41,7 +43,7 @@ export default function Projects() {
       ],
       color: "#ff9800",
       link: "https://www.tibox.cl/reportes-en-power-bi/",
-      doc: "/docs/tibox-analitica.pdf", // 👉 reemplaza por tu ruta real
+      doc: "/docs/tibox-analitica.pdf",
     },
   ];
 
@@ -55,128 +57,56 @@ export default function Projects() {
         textAlign: "center",
       }}
     >
-      <h2 style={{ fontSize: "2rem", marginBottom: "30px" }}>🚀 Mis Proyectos Destacados</h2>
+      <h2 style={{ fontSize: "2rem", marginBottom: "30px" }}>
+        🚀 Mis Proyectos Destacados
+      </h2>
       <p style={{ fontSize: "1.1rem", marginBottom: "50px", lineHeight: "1.6" }}>
-        A continuación puedes explorar algunos de los proyectos más relevantes en los que he
-        participado. Cada uno incluye herramientas clave y un documento para más detalle.
+        A continuación puedes explorar algunos de los proyectos más relevantes en los
+        que he participado. Cada uno incluye herramientas clave y un documento para más detalle.
       </p>
 
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
-          gap: "25px",
-        }}
-      >
+      {/* GRID */}
+      <div className="projects-grid">
         {proyectos.map((proyecto) => (
-          <div
-            key={proyecto.titulo}
-            style={{
-              backgroundColor: "#fff",
-              borderRadius: "12px",
-              boxShadow: "0 4px 12px rgba(0,0,0,0.1)",
-              padding: "25px",
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-              transition: "transform 0.3s, box-shadow 0.3s",
-            }}
-            onMouseOver={(e) => {
-              e.currentTarget.style.transform = "translateY(-5px)";
-              e.currentTarget.style.boxShadow = "0 8px 20px rgba(0,0,0,0.15)";
-            }}
-            onMouseOut={(e) => {
-              e.currentTarget.style.transform = "translateY(0)";
-              e.currentTarget.style.boxShadow = "0 4px 12px rgba(0,0,0,0.1)";
-            }}
-          >
-            <h3
-              style={{
-                color: proyecto.color,
-                fontSize: "1.4rem",
-                marginBottom: "15px",
-              }}
-            >
-              {proyecto.titulo}
-            </h3>
-            <p
-              style={{
-                fontSize: "0.95rem",
-                marginBottom: "20px",
-                lineHeight: "1.6",
-                textAlign: "justify",
-              }}
-            >
-              {proyecto.descripcion}
-            </p>
-            <ul style={{ listStyle: "none", padding: 0, margin: 0, width: "100%" }}>
-              {proyecto.detalles.map((detalle) => (
-                <li
-                  key={detalle}
-                  style={{
-                    marginBottom: "10px",
-                    display: "flex",
-                    alignItems: "center",
-                    fontSize: "0.95rem",
-                  }}
-                >
-                  <span
-                    style={{
-                      color: proyecto.color,
-                      fontWeight: "bold",
-                      marginRight: "8px",
-                      fontSize: "1.1rem",
-                    }}
-                  >
-                    ✔
-                  </span>
-                  {detalle}
-                </li>
-              ))}
-            </ul>
+          <div key={proyecto.titulo} className="project-card">
+            {/* Parte superior */}
+            <div>
+              <h3
+                className="project-title"
+                style={{ color: proyecto.color }}
+              >
+                {proyecto.titulo}
+              </h3>
+              <p className="project-description">{proyecto.descripcion}</p>
+              <ul className="project-details">
+                {proyecto.detalles.map((detalle) => (
+                  <li key={detalle}>
+                    <span style={{ color: proyecto.color }}>✔</span>
+                    {detalle}
+                  </li>
+                ))}
+              </ul>
+            </div>
 
-            {/* Botón Ver más */}
-            <a
-              href={proyecto.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{
-                marginTop: "20px",
-                padding: "10px 20px",
-                backgroundColor: proyecto.color,
-                color: "#fff",
-                fontWeight: "bold",
-                textDecoration: "none",
-                borderRadius: "8px",
-                boxShadow: "0 2px 6px rgba(0,0,0,0.2)",
-                transition: "background-color 0.3s",
-              }}
-              onMouseOver={(e) => (e.currentTarget.style.backgroundColor = "#222")}
-              onMouseOut={(e) => (e.currentTarget.style.backgroundColor = proyecto.color)}
-            >
-              🔗 Ver más
-            </a>
-
-            {/* Botón Descargar documento */}
-            <a
-              href={proyecto.doc}
-              download
-              style={{
-                marginTop: "15px",
-                padding: "10px 20px",
-                backgroundColor: "#444",
-                color: "#fff",
-                fontWeight: "bold",
-                textDecoration: "none",
-                borderRadius: "8px",
-                boxShadow: "0 2px 6px rgba(0,0,0,0.2)",
-                transition: "background-color 0.3s",
-              }}
-              onMouseOver={(e) => (e.currentTarget.style.backgroundColor = "#000")}
-              onMouseOut={(e) => (e.currentTarget.style.backgroundColor = "#444")}
-            >
-              📄 Descargar documento
-            </a>
+            {/* Botones */}
+            <div style={{ marginTop: "20px" }}>
+              <a
+                href={proyecto.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="project-button"
+                style={{ backgroundColor: proyecto.color }}
+              >
+                🔗 Ver más
+              </a>
+              <a
+                href={proyecto.doc}
+                download
+                className="project-button doc"
+              >
+                📄 Descargar documento
+              </a>
+            </div>
           </div>
         ))}
       </div>
