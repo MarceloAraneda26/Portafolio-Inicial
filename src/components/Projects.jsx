@@ -46,9 +46,9 @@ export default function Projects() {
       doc: "/docs/tibox-analitica.pdf",
     },
     {
-      titulo: "🚀 Evomove Journey (Mindhub Bootcamp)",
+      titulo: "🚀 Ecomove Journey (Mindhub Bootcamp)",
       descripcion:
-        "Proyecto desarrollado en el bootcamp de Product Owner de Mindhub. Se trabajó en la conceptualización y planificación de la plataforma Evomove Journey, aplicando metodologías ágiles y herramientas de gestión de producto.",
+        "Proyecto desarrollado en el bootcamp de Product Owner de Mindhub. Se trabajó en la conceptualización y planificación del proyecto Ecomove Journey, aplicando metodologías ágiles y herramientas de gestión de producto.",
       detalles: [
         "Aplicación de prácticas de Product Ownership",
         "Definición de backlog y roadmap",
@@ -57,7 +57,7 @@ export default function Projects() {
       ],
       color: "#9c27b0",
       link: "https://ecomovejourney.netlify.app/",
-      doc: "/docs/evomove-journey.pdf",
+      doc: "/docs/ecomove-journey.pdf",
     },
   ];
 
