@@ -1,4 +1,4 @@
-import "./projects.css"; // 👈 importa tu CSS
+import "./projects.css";
 
 export default function Projects() {
   const proyectos = [
@@ -45,6 +45,20 @@ export default function Projects() {
       link: "https://www.tibox.cl/reportes-en-power-bi/",
       doc: "/docs/tibox-analitica.pdf",
     },
+    {
+      titulo: "🚀 Evomove Journey (Mindhub Bootcamp)",
+      descripcion:
+        "Proyecto desarrollado en el bootcamp de Product Owner de Mindhub. Se trabajó en la conceptualización y planificación de la plataforma Evomove Journey, aplicando metodologías ágiles y herramientas de gestión de producto.",
+      detalles: [
+        "Aplicación de prácticas de Product Ownership",
+        "Definición de backlog y roadmap",
+        "Aplicación de metodologías ágiles (Scrum)",
+        "Planificación de MVP y releases",
+      ],
+      color: "#9c27b0",
+      link: "https://ecomovejourney.netlify.app/",
+      doc: "/docs/evomove-journey.pdf",
+    },
   ];
 
   return (
@@ -65,7 +79,6 @@ export default function Projects() {
         que he participado. Cada uno incluye herramientas clave y un documento para más detalle.
       </p>
 
-      {/* GRID */}
       <div className="projects-grid">
         {proyectos.map((proyecto) => (
           <div key={proyecto.titulo} className="project-card">
