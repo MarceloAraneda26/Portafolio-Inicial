@@ -22,7 +22,7 @@ export default function About() {
         }}
       >
         <img
-          src="/foto.jpg" // asegúrate de poner tu foto en /public/mi-foto.jpg
+          src="/foto.jpg"
           alt="Foto de Marcelo Araneda"
           style={{
             width: "220px",
@@ -87,7 +87,7 @@ export default function About() {
           visualización de información estratégica.
         </p>
 
-        {/* Caja llamativa para descargar CV */}
+        {/* Caja llamativa */}
         <div
           style={{
             marginTop: "40px",
@@ -109,8 +109,10 @@ export default function About() {
             📄 ¿Quieres saber más?
           </h3>
           <p style={{ marginBottom: "20px" }}>
-            Descarga mi CV completo y conoce más sobre mi experiencia y habilidades.
+            Descarga mi CV completo o escucha mi presentación breve.
           </p>
+
+          {/* Botón CV */}
           <a
             href="/cv.pdf"
             download
@@ -124,6 +126,7 @@ export default function About() {
               borderRadius: "8px",
               textDecoration: "none",
               boxShadow: "0 4px 6px rgba(0,0,0,0.2)",
+              marginBottom: "15px",
               transition: "transform 0.2s ease, background-color 0.2s ease",
             }}
             onMouseOver={(e) => {
@@ -137,6 +140,45 @@ export default function About() {
           >
             📥 Descargar CV
           </a>
+
+          <br />
+
+          {/* Botón audio */}
+          <a
+            href="/elevator_maraneda.mp3"
+            download
+            style={{
+              display: "inline-block",
+              padding: "14px 30px",
+              backgroundColor: "#ff9800",
+              color: "#fff",
+              fontWeight: "bold",
+              fontSize: "18px",
+              borderRadius: "8px",
+              textDecoration: "none",
+              boxShadow: "0 4px 6px rgba(0,0,0,0.2)",
+              marginTop: "10px",
+              transition: "transform 0.2s ease, background-color 0.2s ease",
+            }}
+            onMouseOver={(e) => {
+              e.currentTarget.style.transform = "scale(1.05)";
+              e.currentTarget.style.backgroundColor = "#cc7a00";
+            }}
+            onMouseOut={(e) => {
+              e.currentTarget.style.transform = "scale(1)";
+              e.currentTarget.style.backgroundColor = "#ff9800";
+            }}
+          >
+            🎧 Oye lo que tengo que decir
+          </a>
+
+          {/* Reproductor de audio */}
+          <div style={{ marginTop: "20px" }}>
+            <audio controls style={{ width: "100%", maxWidth: "350px" }}>
+              <source src="/elevator_maraneda.mp3" type="audio/mpeg" />
+              Tu navegador no soporta audio HTML5.
+            </audio>
+          </div>
         </div>
       </div>
     </section>
