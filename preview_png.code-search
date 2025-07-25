@@ -1,0 +1,13 @@
+# Query: preview.png
+# ContextLines: 1
+
+2 results - 1 file
+
+index.html:
+  26      <!-- Cambia esta imagen por una tuya subida en /public -->
+  27:     <meta property="og:image" content="https://marcelo-araneda-portafolio.netlify.app/og-image.png" />
+  28  
+
+  32      <meta name="twitter:description" content="Proyectos destacados, experiencia y habilidades en bioinformática y gestión TI." />
+  33:     <meta name="twitter:image" content="https://marcelo-araneda-portafolio.netlify.app/preview.png" />
+  34  
